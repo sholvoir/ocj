@@ -1,0 +1,82 @@
+Question 1: Create a simple front end page which show current time.
+
+question1.html:
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="question1.css">
+</head>
+<body>
+    <div id="myTimer"></div>
+    <script src="question1.js"></script>
+</body>
+</html>
+
+question1.css:
+#myTimer {
+    font-size:40px;
+    text-align:center;
+    margin: 20px 0
+}
+
+question1.js:
+const myTimer = document.getElementById('myTimer');
+const pad = (number, digital = 2) => ('0000' + number).slice(-digital);
+const timerTick = () => {
+    let d = new Date();
+    myTimer.innerHTML = pad(d.getFullYear(), 4) + '-'
+        + pad(d.getMonth() + 1) + '-'
+        + pad(d.getDate()) + ' '
+        + pad(d.getHours()) + ':'
+        + pad(d.getMinutes()) + ':'
+        + pad(d.getSeconds());
+}
+timerTick();
+setInterval(timerTick, 1000);
+
+Question 2: What is CSS selector? What is class selector and id selector?
+    What‘s the difference between class selector and id selector?
+
+CSS selectors are patterns used to select the element(s) you want to style.
+Class selector select elements from its class attribute but id selector select
+element from id attribute and id is supposed is unique.
+
+Question 3: What is Express middleware? 
+    What is Application-level middleware?
+    What is Router-level middleware?
+    What is Error-handling middleware?
+
+Middleware functions are functions that have access to the request object (req),
+    the response object (res), and the next function in the application’s
+    request-response cycle.
+Bind application-level middleware to an instance of the app object by using the 
+    app.use() and app.METHOD() functions
+Router-level middleware works in the same way as application-level middleware, 
+    except it is bound to an instance of express.Router().
+Define error-handling middleware functions in the same way as other middleware 
+    functions, except with four arguments instead of three.
+
+Question 4: Which of the following is true with respect to Node.
+A - Every API of Node js are asynchronous.
+B - Node being a single thread, and uses async function calls to maintain the concurrency.
+C - Node thread keeps an event loop and whenever any task get completed, it fires the 
+    corresponding event which signals the event listener function to get executed.
+D - All of the above.
+
+C
+
+Question 5: Which of the following class can be used to create a responsive table?
+A - .table-responsive
+B - .responsive
+C - .active
+D - .table
+
+A
+
+Question 6: What is a Resource in RESTful API?
+
+In REST, primary data representation is called Resource.
+
+Question 7: Name some of the commonly used HTTP methods used in REST based architecture?
+
+GET, POST, PUT, DELETE, PATCH

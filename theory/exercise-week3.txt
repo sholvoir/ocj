@@ -1,0 +1,46 @@
+Question 1: What’s the difference between a docker image and container?
+
+    Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes 
+and the corresponding execution parameters for use within a container runtime. An image typically contains a 
+union of layered filesystems stacked on top of each other. An image does not have state and it never changes.
+    A container is a runtime instance of a docker image. A Docker container consists of A Docker image, An 
+execution environment and A standard set of instructions.
+
+
+Question 2: What’s the difference between a container and a VM?
+
+Docker is not VM.
+1. VM hypervisor emulate a virtual hardware to isolate the each guest os. So app on guest os is isolated.
+   but there no guest os in Docker, Docker daemon utilize linux kernal's namespace to isolate each container.
+2. Each VM has its own image, Docker image is shared between containers if they owner same image.
+
+
+Question 3: How to publish a docker image to docker hub?
+
+1. docker login
+2. docker tag your_image DOCKER_HUB_USER_NAME/your_image
+3. docker push DOCKER_HUB_USER_NAME/your_image
+
+
+Question 4: What is the advantage of using a “reverse proxy server”?
+
++ Hide the existence and characteristics of an origin server or servers.
++ Protect against common web-based attacks as application firewall.
++ Perform SSL encryption for web server.
++ Load balance.
++ Cache and compress content.
++ Single public IP as interface.
++ Add basic HTTP authentication for web server.
+
+
+Question 5: How start Nginx through a different port other than 80?
+
+server {
+    listen: 8000;
+}
+
+
+Question 6: What’s the purpose of upstream directive in nginx?
+
+Define groups of servers that can be referenced by the proxy_pass, fastcgi_pass,
+uwsgi_pass, scgi_pass, and memcached_pass directives.
